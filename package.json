@@ -8,7 +8,8 @@
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "cz": "git-cz"
+    "cz": "git-cz",
+    "lint": "tslint --project tsconfig.json --format codeFrame"
   },
   "prettier": {
     "semi": false,
@@ -23,7 +24,7 @@
   },
   "lint-staged": {
     "src/**/*.{json,css}": ["prettier --write", "git add"],
-    "src/**/*.{ts,tsx}": ["prettier --write", "tslint --project . --fix", "git add"]
+    "src/**/*.{ts,tsx}": ["prettier --write", "yarn lint --fix", "git add"]
   },
   "dependencies": {
     "react": "16.0.0",
