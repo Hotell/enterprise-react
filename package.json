@@ -22,14 +22,13 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,json,css}": ["prettier --write", "git add"]
+    "src/**/*.{ts,tsx,json,css}": ["prettier --write", "tslint --project . --fix", "git add"]
   },
   "dependencies": {
     "react": "16.0.0",
     "react-dom": "16.0.0"
   },
   "devDependencies": {
-    "react-scripts-ts": "2.8.0",
     "@types/jest": "21.1.4",
     "@types/node": "8.0.44",
     "@types/react": "16.0.13",
@@ -38,6 +37,9 @@
     "cz-conventional-changelog": "2.0.0",
     "husky": "0.14.3",
     "lint-staged": "4.2.3",
-    "prettier": "1.7.4"
+    "prettier": "1.7.4",
+    "react-scripts-ts": "2.8.0",
+    "tslint-config-prettier": "1.6.0",
+    "tslint-config-standard": "6.0.1"
   }
 }
