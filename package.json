@@ -22,7 +22,8 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,json,css}": ["prettier --write", "tslint --project . --fix", "git add"]
+    "src/**/*.{json,css}": ["prettier --write", "git add"],
+    "src/**/*.{ts,tsx}": ["prettier --write", "tslint --project . --fix", "git add"]
   },
   "dependencies": {
     "react": "16.0.0",
