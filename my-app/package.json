@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "precommit": "lint-staged",
-    "start": "react-scripts-ts start",
+    "start": "react-scripts-ts start --hot",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
@@ -23,15 +23,11 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{json,css}": [
-      "prettier --write",
-      "git add"
-    ],
-    "src/**/*.{ts,tsx}": [
-      "prettier --write",
-      "yarn lint --fix",
-      "git add"
-    ]
+    "gitDir": "../",
+    "linters": {
+      "*.{json,css}": ["prettier --write", "git add"],
+      "*.{ts,tsx}": ["prettier --write", "yarn lint --fix", "git add"]
+    }
   },
   "dependencies": {
     "react": "16.0.0",
@@ -43,6 +39,7 @@
     "@types/react": "16.0.13",
     "@types/react-dom": "16.0.1",
     "@types/react-test-renderer": "16.0.0",
+    "@types/webpack-env": "1.13.2",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
     "husky": "0.14.3",
