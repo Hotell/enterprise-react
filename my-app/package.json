@@ -23,6 +23,11 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "linters": {
       "*.{css,js,jsx,ts,tsx,md}": [
@@ -56,10 +61,5 @@
     "tslint-config-prettier": "1.13.0",
     "tslint-config-standard": "7.0.0",
     "typescript": "2.9.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
