@@ -1,5 +1,16 @@
 {
-  "extends": ["tslint-react", "tslint-config-standard", "tslint-config-prettier"],
+  "extends": [
+    "tslint-react",
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  },
   "rules": {
     "jsx-no-lambda": false,
     "jsx-no-multiline-js": false,
@@ -30,7 +41,6 @@
     "ordered-imports": [true],
     "newline-before-return": true,
     "object-literal-shorthand": true,
-    "typeof-compare": true,
     "arrow-return-shorthand": [true],
     "prefer-object-spread": true,
     "prefer-for-of": true,

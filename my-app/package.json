@@ -1,15 +1,16 @@
 {
   "name": "my-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
-    "precommit": "lint-staged",
-    "start": "react-scripts-ts start --hot",
+    "start": "BROWSER=none react-scripts-ts start --hot",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "cz": "git-cz",
-    "lint": "tslint --project tsconfig.json --format codeFrame"
+    "commit": "git-cz",
+    "style": "npm run format && npm run lint -- --fix",
+    "lint": "tslint --project tsconfig.json --format codeFrame",
+    "format": "prettier \"**/*.{js,jsx,ts,tsx,md,css}\" --write"
   },
   "prettier": {
     "semi": false,
@@ -25,29 +26,41 @@
   "lint-staged": {
     "gitDir": "../",
     "linters": {
-      "*.{json,css}": ["prettier --write", "git add"],
-      "*.{ts,tsx}": ["prettier --write", "yarn lint --fix", "git add"]
+      "*.{css,js,jsx,ts,tsx,md}": [
+        "prettier --write",
+        "git add"
+      ],
+      "*.{ts,tsx}": [
+        "yarn lint --fix",
+        "git add"
+      ]
     }
   },
   "dependencies": {
-    "react": "16.0.0",
-    "react-dom": "16.0.0"
+    "react": "16.4.0",
+    "react-dom": "16.4.0"
   },
   "devDependencies": {
-    "@types/jest": "21.1.4",
-    "@types/node": "8.0.44",
-    "@types/react": "16.0.13",
-    "@types/react-dom": "16.0.1",
-    "@types/react-test-renderer": "16.0.0",
-    "@types/webpack-env": "1.13.2",
-    "commitizen": "2.9.6",
-    "cz-conventional-changelog": "2.0.0",
-    "husky": "0.14.3",
-    "lint-staged": "4.2.3",
-    "prettier": "1.7.4",
-    "react-scripts-ts": "2.8.0",
-    "react-test-renderer": "16.0.0",
-    "tslint-config-prettier": "1.6.0",
-    "tslint-config-standard": "6.0.1"
+    "@types/jest": "23.0.2",
+    "@types/node": "10.3.2",
+    "@types/react": "16.3.17",
+    "@types/react-dom": "16.0.6",
+    "@types/react-test-renderer": "16.0.1",
+    "@types/webpack-env": "1.13.6",
+    "commitizen": "2.10.1",
+    "cz-conventional-changelog": "2.1.0",
+    "husky": "1.0.0-rc.8",
+    "lint-staged": "7.2.0",
+    "prettier": "1.13.5",
+    "react-scripts-ts": "2.16.0",
+    "react-test-renderer": "16.4.0",
+    "tslint-config-prettier": "1.13.0",
+    "tslint-config-standard": "7.0.0",
+    "typescript": "2.9.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
