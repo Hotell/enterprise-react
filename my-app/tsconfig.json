@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
@@ -11,11 +12,12 @@
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
-  "include": ["src"],
   "exclude": [
     "node_modules",
     "build",
